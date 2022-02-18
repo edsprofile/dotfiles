@@ -1,0 +1,27 @@
+#+TITLE: Dotfiles install
+#+OPTIONS: num:nil
+* Dotfiles
+
+  Setup new Mac
+  1. Install Apple's command line tools.
+     #+begin_src shell
+       xcode-select --install
+     #+end_src
+  2. Clone the repo into the ~/.dotfiles
+     #+begin_src shell
+       # using https
+       git clone https://github.com/edsprofile/dotfiles.git ~/.dotfiles
+     #+end_src
+  3. Create the symlinks from the file to the home directory
+     #+begin_src shell
+       #examples
+       ln -s ~/.dotfiles/.zshrc ~/.zshrc
+       ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+     #+end_src
+  4. Install homebrew
+     #+begin_src shell
+       # Install homebrew
+       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+       # Use brew bundle and pass the Brewfile
+       brew bundle --file ~/.dotfile/Brewfile
+     #+end_src
